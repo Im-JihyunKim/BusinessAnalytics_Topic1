@@ -1,7 +1,4 @@
 # Business Analytics Topic1: Dimensionality Reduction (차원축소)
-
-## Introduction
-<br/>
 이미지, 텍스트, 센서 등 다양한 도메인의 데이터들은 변수의 수가 매우 많은 고차원 데이터(High Dimensional Data)의 특징을 가지고 있습니다. 그러나 많은 기계학습 알고리즘은 실제 데이터 차원을 모두 사용하지 않고, 정보를 축약하여 내재된 차원(Intrinsic/Embedded Dimension)으로 축약하는 경우가 많습니다. 이는 차원의 저주(curse of Dimensionality) 를 해결하기 위함인데, 사용하는 변수 수를 줄이면 잡음(noise)이 포함될 확률도 감소시킴과 동시에 예측 모델의 성능을 높이고, 예측 모델의 학습과 인식 속도를 빠르게 할 수 있으며 예측 모델에 필요한 학습 집합의 크기를 크게 할 수 있기 때문입니다. 따라서 분석 과정에서 성능을 저하시키지 않는 최소한의 변수 집합을 판별하여 주요 정보만을 보존하는 것입니다.
 <br/>
 본 튜토리얼에서는 차원 축소 방식 중 __비교사적 차원 축소(Unsupervised Dimensionality Reduction)__ 에 대한 4가지 방법론을 비교하여 설명하고자 합니다. 비교사적 차원 축소는 축소된 차원의 적합성을 검증하는 데 있어 예측 모델을 적용하지 않는다는 특징을 가집니다. 대표적 방법론으로는 50년 전 발표된 임베딩 방법론인 Multi-Dimensional Scaling(1964)과 가장 가까운 이웃(nearest neighbors) 정보를 이용하여 고차원 공간의 구조를 보존하는 저차원 공간을 학습하는 Locally Linear Embedding(2000), ISOMAP(2000), 그리고 안정적인 성능을 자랑하고 임베딩 결과 시각화에 가장 자주 사용되는 t-SNE(Stochastic Neighbor Embedding)가 있습니다. 사실 LLE 나 ISOMAP 은 deep learning 모델들의 임베딩 공간을 시각화 하기보다는 swissroll data 와 같이 manifold 가 존재하는 데이터 공간을 시각화 하는 데 적합합니다. 본 튜토리얼에서는 MDS, LLE, ISOMAP, t-SNE 임베딩 알고리즘들이 각자 차원을 축소하려했던 정보가 무엇인지 비교해 보려 합니다.
