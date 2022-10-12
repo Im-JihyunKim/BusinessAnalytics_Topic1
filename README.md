@@ -84,6 +84,7 @@ __Mutation 돌연변이__
 - numpy >= 1.18
 - pandas >= 1.0.1
 - rich >= 12.6.0
+- scikit-learn >= 1.1.2
 
 ## Parameters
 Genetic Algorithm class를 호출하는 데 필요한 파라미터 목록입니다.
