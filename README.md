@@ -1,6 +1,7 @@
 # 2022 Business Analytics Topic 1 Tutorial
 __2022010558 김지현__  
-1강 차원 축소 Topic에서, 변수 선택 방법론 중 Genetic Algorithm(유전 알고리즘)에 대한 [튜토리얼](https://github.com/Im-JihyunKim/BusinessAnalytics_Topic1/blob/main/GA_Feature_Selection_Tutorial.ipynb)을 작성하였습니다.   
+1강 차원 축소 Topic에서, 변수 선택 방법론 중 [Genetic Algorithm(유전 알고리즘)에 대한 튜토리얼](https://github.com/Im-JihyunKim/BusinessAnalytics_Topic1/blob/main/GA_Feature_Selection_Tutorial.ipynb)을 작성하였습니다.   
+- 링크를 클릭하면 보다 상세한 튜토리얼을 확인할 수 있습니다.
 ## Table of Contents:
 - [Dimensionality Reduction](#dimensionality-reduction)
   * [Genetic Algorithm](#genetic-algorithm)
