@@ -73,7 +73,7 @@ __Mutation 돌연변이__
 - 돌연변이는 세대가 진화해 가는 과정에서 다양성을 확보하기 위한 장치입니다.
 - 특정 유전자의 정보를 낮은 확률로 반대 값으로 변환하는 과정을 통해 돌연변이를 유도합니다.
 - 돌연변이를 통해 현재 해가 Local Optimum에서 탈출할 수 있는 기회를 제공하지만, 너무 높은 돌연변이율은 유전 알고리즘의 convergence 속도를 늦추기에 주로 0.01 이하의 값을 사용합니다.
-![image](https://user-images.githubusercontent.com/115214552/195277889-6b6f54e7-a631-4006-8cf0-81c74d9250bb.png)
+![image](https://user-images.githubusercontent.com/115214552/195280032-02f005bd-48ae-4221-a4cc-98056240fc71.png)
 
 
 ## Requirements
