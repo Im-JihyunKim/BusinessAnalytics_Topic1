@@ -1,8 +1,13 @@
 # 2022 Business Analytics Topic1 Tutorial
 ### Table of contents:
 - [Dimensionality Reduction](#dimensionality-reduction)
-- [Genetic Algorithm](#genetic-algorithm)
+  * [Genetic Algorithm](#genetic-algorithm)
     + [기본 개념](#-----)
+    + [Requirements](#requirements)
+    + [Parameters](#parameters)
+    + [Argparse](#argparse)
+    + [Example of Use](#example-of-use)
+  * [References](#references)
 
 # Dimensionality Reduction
 이미지, 텍스트, 센서 등 다양한 도메인의 데이터들은 변수의 수가 매우 많은 고차원 데이터(High Dimensional Data)의 특징을 가지고 있습니다. 그러나 많은 기계학습 알고리즘은 실제 데이터 차원을 모두 사용하지 않고, 정보를 축약하여 내재된 차원(Intrinsic/Embedded Dimension)을 활용하는 경우가 많습니다. 이는 __차원의 저주(curse of Dimensionality)__ 를 해결하기 위함인데, 사용하는 변수 수를 줄이면 잡음(noise)이 포함될 확률도 감소시킴과 동시에 예측 모델의 성능을 높이고, 예측 모델의 학습과 인식 속도를 빠르게 할 수 있으며 예측 모델에 필요한 학습 집합의 크기를 크게 할 수 있기 때문입니다.   
@@ -35,7 +40,7 @@ Genetic Algorithm class를 호출하는 데 필요한 파라미터 목록입니�
 유전 알고리즘에서 필요한 하이퍼파라미터 목록입니다. 터미널에서 `main.py`를 실행 시 인자 값을 자유롭게 바꿀 수 있습니다.
 |__Argument__|__Type__|__Default__|__Help__|
 |------|---|---|---|
-|'seed`|int|2022|각 세대를 만들어냄에 있어 Randomness를 제어하기 위함입니다. 정수값을 입력합니다.|
+|`seed`|int|2022|각 세대를 만들어냄에 있어 Randomness를 제어하기 위함입니다. 정수값을 입력합니다.|
 |`normalization`|bool|False|입력 데이터 값 Scaling 여부입니다.|
 |`n_generation`|int|50|얼마나 많은 세대를 만들어낼 지를 결정하는 부분으로, 알고리즘 종료조건 중 하나입니다.|
 |`n_population`|int|100|한 세대에 얼마나 많은 염색체 수(변수 조합)를 고려할 것인지를 결정합니다. 값이 클 수록 연산량이 많아지지만 더 많은 범위를 탐색할 수 있습니다.|
@@ -86,9 +91,12 @@ if __name__ == '__main__':
     parser.add_argument("--n-population", default=100, type=int, help="Determines the size of the population (number of chromosomes).")
     parser.add_argument("--crossover-rate", default=0.7, type=float, help="Defines the crossing probability. It must be a value between 0.0 and 1.0.")
     parser.add_argument("--mutation-rate", default=0.1, type=float, help="Defines the mutation probability. It must be a value between 0.0 and 1.0.")
-    parser.add_argument("--tournament-k", default=2, type=int, help="Defines the size of the tournament carried out in the selection process. Number of chromosomes facing each other in each tournament.")
+    parser.add_argument("--tournament-k", default=2, type=int, help="Defines the size of the tournament carried out in the selection process. \n 
+                         Number of chromosomes facing each other in each tournament.")
     parser.add_argument("--n-jobs", default=1, choices=[1, -1], type=int, help="Number of cores to run in parallel. By default a single-core is used.")
-    parser.add_argument("--initial-best-chromosome", default=None, type=np.ndarray, help="A one-dimensional binary matrix of size equal to the number of features (M). Defines the best chromosome (subset of features) in the initial population.")
+    parser.add_argument("--initial-best-chromosome", default=None, type=np.ndarray, 
+                        help="A one-dimensional binary matrix of size equal to the number of features (M). \n
+                        Defines the best chromosome (subset of features) in the initial population.")
     parser.add_argument("--verbose", default=0, type=int, help="Control the output verbosity level. It must be an integer value between 0 and 2.")
     parser.add_argument("--c-metric", default='accuracy', choices=['accuracy', 'f1_score', 'roc_auc_socre'], type=str)
     parser.add_argument("--r-metric", default='rmse', choices=['rmse', 'corr', 'mape', 'mae'], type=str)
@@ -111,6 +119,11 @@ Creating generation 2...
  ✔ Same scoring value found 1 / 5 times.
  ✔ Current best chromosome: [1 1 1 1 0 1 1 1 1 1 0 1 0], Score: 0.9859154929577465
     Elapsed generation time:  2.71 seconds
+Creating generation 3...
+ ✔ Evaluating population of new generation 3...
+ ✔ Same scoring value found 2 / 5 times.
+ ✔ Current best chromosome: [1 1 1 1 0 1 1 1 1 1 0 1 0], Score: 0.9859154929577465
+    Elapsed generation time:  2.69 seconds
 (...)
 Creating generation 49...
  ✔ Evaluating population of new generation 49...
