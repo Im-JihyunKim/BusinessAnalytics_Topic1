@@ -67,6 +67,7 @@ __Genetic Algorithm Process:__
 
 ### Crossover and Mutation
 ![image](https://user-images.githubusercontent.com/115214552/195280032-02f005bd-48ae-4221-a4cc-98056240fc71.png)
+
 __Crossover 교배__
 - 선택된 부모 염색체로부터 자식세대를 재생산해내는 과정입니다. 
 - 앞 단계에서 선택된 부모 염색체들의 유전자 정보를 서로 교환하여 새로운 자식 염색체들을 최종적으로 생성해냅니다.
