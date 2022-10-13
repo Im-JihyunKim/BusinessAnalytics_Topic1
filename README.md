@@ -1,22 +1,29 @@
 # 2022 Business Analytics Topic 1 Tutorial
 __2022010558 김지현__  
-1. __Supervised Method__ 중 변수 선택 기법 중 하나인 [Genetic Algorithm(유전 알고리즘)에 대한 튜토리얼](https://github.com/Im-JihyunKim/BusinessAnalytics_Topic1/blob/main/GA_Feature_Selection_Tutorial.ipynb)을 작성하였습니다.   
-2. __Unsupervised Method__ 중 Linear Embedding 기법 중 [MDS(다차원 척도법)에 대한 튜토리얼]()을 작성하였습니다.  
+1. __Supervised Method__ 중 변수 선택 기법 중 하나인 [Genetic Algorithm(유전 알고리즘)에 대한 튜토리얼](https://github.com/Im-JihyunKim/BusinessAnalytics_Topic1/blob/main/Supervised%20Dimensionality%20Reduction/GA_Feature_Selection_Tutorial.ipynb)을 작성하였습니다.   
+2. __Unsupervised Method__ 중 Linear Embedding 기법 중 [MDS(다차원 척도법)에 대한 튜토리얼](https://github.com/Im-JihyunKim/BusinessAnalytics_Topic1/blob/main/Unsupervised%20Dimensionality%20Reduction/MDS_Tutorial.ipynb)을 작성하였습니다.  
 링크를 클릭하면 보다 상세한 튜토리얼을 확인할 수 있습니다.
 
 ## Table of Contents:
 - [Dimensionality Reduction](#dimensionality-reduction)
-  * [Genetic Algorithm](#genetic-algorithm)
+  * [Supervised Dimensionality Redcution: Genetic Algorithm](#supervised-dimensionality-redcution--genetic-algorithm)
     + [How Genetic Algorithm Works](#how-genetic-algorithm-works)
     + [Genetic Algorithm Ending Criteria](#genetic-algorithm-ending-criteria)
     + [Fitness Evaluation](#fitness-evaluation)
     + [Selection](#selection)
     + [Crossover and Mutation](#crossover-and-mutation)
-  * [Requirements](#requirements)
-  * [Parameters](#parameters)
-  * [Argparse](#argparse)
-  * [Example of Use](#example-of-use)
+    + [Requirements](#requirements)
+    + [Parameters](#parameters)
+    + [Argparse](#argparse)
+    + [Example of Use](#example-of-use)
+  * [Multidimensional Reduction (MDS)](#multidimensional-reduction--mds-)
+    + [Purpose](#purpose)
+    + [How to Use](#how-to-use)
+    + [Parameters](#parameters-1)
+    + [Simple Illustration](#simple-illustration)
 - [References](#references)
+    + [Genetic Algorithm](#genetic-algorithm)
+    + [Multidimensional Scaling](#multidimensional-scaling)
 
 # Dimensionality Reduction
 이미지, 텍스트, 센서 등 다양한 도메인의 데이터들은 변수의 수가 매우 많은 고차원 데이터(High Dimensional Data)의 특징을 가지고 있습니다. 그러나 많은 기계학습 알고리즘은 실제 데이터 차원을 모두 사용하지 않고, 정보를 축약하여 내재된 차원(Intrinsic/Embedded Dimension)을 활용하는 경우가 많습니다. 이는 __차원의 저주(curse of Dimensionality)__ 를 해결하기 위함인데, 사용하는 변수 수를 줄이면 잡음(noise)이 포함될 확률도 감소시킴과 동시에 예측 모델의 성능을 높이고, 예측 모델의 학습과 인식 속도를 빠르게 할 수 있으며 예측 모델에 필요한 학습 집합의 크기를 크게 할 수 있기 때문입니다.   
